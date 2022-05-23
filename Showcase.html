@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Barbora Gustafsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+	<title>Barbora Gustafsson</title>
+	<link rel="stylesheet" href="test.css">
+
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;600&family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+
+<body>
+	<div class="main-grid">
+		<!--jag använder grid layout för hela webplatsen, den fungerar som wrapper för sidans innehåll-->
+
+		<header>
+			<div class="logo-container"><a href="index.html" title="Home" class="logo-home-link">
+					<img src="images/logo.png" class="logo" alt="logo"> </a>
+				<!--sidans logga som fungar även som en home button-->
+			</div>
+			<div id="white-line"></div>
+
+			<nav id="main-navigation-container">
+				<!--websidans navigation wraps in en nav tag, den är lämpligare än endast div med tanke på skärmläsaren, samtidigt visar taggen att denna del hanldar om kopling mellan webplatsens huvuddelar-->
+
+				<ul class="nav-menu">
+
+					<li><a href="about.html" class="navigation  no-wrap">Om mig</a></li>
+
+					<li><a href="services.html" title="services" class="navigation">Mina tjänster </a></li>
+
+					<li><a href="Showcase.html" title="Showcase" class="showcase navigation-current">Showcase</a></li>
+
+					<li><a href="kontakt.html" title="kontakt" class="navigation">kontakt</a></li>
+
+				</ul>
+
+
+
+
+			</nav>
+			<div class="hero-text-container">
+				<p class="hero-text"> <span class="hero-sentences-background hero-text-row1">Din<span class="letter-pink"> personliga </span>mediabyrå</span>
+					<span class="hero-sentences-background hero-text-row2">Jag tar hand om responsiv webdesign<span class="hero-text-row2-SEO">, SEO,</span></span>
+					<span class="hero-sentences-background hero-text-row3">digital marknadsföring och sociala medier.</span>
+				</p>
+			</div>
+		</header>
+
+
+		<div class="hero-image"> </div>
+		<article id="Uppgift-text">
+			<!--text markeras med "article" för att visa till webbläsaren och skärmläsaren vad denna del av webbsidan handlar om.-->
+			<h1>Hur sidan är uppbyggd</h1>
+
+			<h2>Grid layout</h2>
+			<p>För att skapa denna webbsida har jag mestadels valt att använda sig av grid layout. Layouten sägs vara mest versatil och är till viss del responsiv automatiskt. Detta leder till att det är minskat behov av media queries. Grids är en ny metod för formgivning av webbsidor och har funnits sedan 2017. “Grid Layout är en ny layoutmodell för CSS som har kraftfulla förmågor för att kontrollera storleken och placeringen av lådor och deras innehåll. Till skillnad från flex-box layout, som är enaxelorienterad, är grid layout optimerad för 2-dimensionella layouter”. (ref1)</p>
+			<p>Först trodde jag att det bästa vore att använda css grid för alla delar av webbsidan. Efter en längre tid av miss and hit metoden lärde jag mig att det är tillåtet att kombinera olika designens metoder och det är inte fel att göra olika delar av webbsidan med olika verktyg. Man kan med fördel kombinera grids med flex-box och även andra verktyg om så önskas, det är alltså inte fel. Så länge korrekt html och css skrivs spelar det ingen roll för funktionsmässigt, om sidan endast är grid baserad eller om den utnyttjar en kombination av olika typer av layout .(ref2)
+			</p>
+
+
+			<h2>Placering på grid</h2>
+			<p> För att placera saker på en grid kan olika metoder användas med samma resultat: namnge rader, namnge områden, använda rad- och kolumnnummer eller ge webbläsaren frihet att placera saker på griden automatiskt. (ref1)
+				Jag valde en kombination av dessa för att bygga min webbsida. I vissa fall skrev jag rad- och kolumnnummer när det inte var nödvändigt, då webbläsaren själv satte innehållet på rätt plats. Anledningen var att det på det sättet fixerades saker på rätt plats och sidan riskerade inte att gå sönder om fler saker skulle läggas till eller om sidan skulle ändras i framtiden. (ref1) Jag valde att inte använda funktionen där man kan ge olika namn till olika områden (areas) eftersom det kändes för komplicerat efter flera försök</p>
+
+			<h2>Mobilutseende</h2>
+			<p>För att skapa mobilutseende med alla tre kolumner tilldelade jag nya rad- och kolumnnummer till alla tre kolumner.
+			</p>
+
+			<h2>Overlay</h2>
+			<p>Med grid är det enkelt att placera sidans innehåll på varandra (detta behövdes för att skapa hero image som bakgrund med logo, navigation och text ovan på). För att göra det ger man samma plats på grid till flera saker, sedan måste man uppge vilken z-index olika saker har. Z-index säger till webbläsaren vilken sak kommer att visas först och vilken ligger bakom. Z-index fungerar endast när man aktiverar inställningen för “position” (relative, absolute eller fixed). (ref3)</p>
+
+			<h2>Accesibilty</h2>
+			<p>När det används grid för att skapa layout är det enkelt att lägga innehåll på olika ställen utan att göra ändringar i html. Det är därför som det är viktigt att dubbelkolla att sakerna ligger logiskt ordnade i html-filen.</p>
+			<p>Man kan dock välja att flytta saker som ska synas överst på sidan (t.ex meny) som är irrelevanta för skärmläsaren, att flytta ner i html koden men fortfarande behålla “visuell” plats på sidan med hjälp av css. Det är lätt gjort med hjälp av just grid layouten. (ref4) Jag valde dock att ge elementen deras "vanliga" plats eftersom det kändes lättare hålla koll på var sakerna på sidan finns. </p>
+
+			<p>Det är även gynnsamt att använda sig av specifika taggar när man bygger en webbsida såsom “nav”, “article” och “footer” som finns i HTML5. Dessa har samma funktion som “div” men ger även information till webbsidan vilken information som finns inuti taggen. Detta underlättar för skärmläsaren och deras användare.(ref5) Vid användning av dessa taggar hade jag problem med att bestämma vilken tag ska vara bäst för kortare text delar (såsom kolumner på huvudsidan eller text om "mina tjänster"). Jag valde därför att endast markera dem som div istället för article eftersom de är så korta.</p>
+
+
+			<h2>overflow av text inom wrapper</h2>
+
+			<p>För att bekämpa problemet med overflow valde jag att använda mig av grids och flexbox. Båda dessa har automatisk funktion som ställer automatisk storlek på objektet baserat på innehållet. När man då examinerar huvudkolumner på startsida ser man att de lika långa som innehållet är och om man väljer att skriva mer då skulle kolumnerna bli längre. De kan dock inte bli bredare pga fast bredd.</p>
+
+
+			<h2>Class eller id?</h2>
+			<p>För att kunna ge unikt utseende till olika delar av webbsidan används det id och class taggar. Id ges till unika beståndsdelar samtidigt som samma class kan ges till flertalet element. I vissa fall är det nödvändigt att använda sig av id selectorn: när man vill koppla element till en url länk. ID används även för att koppla element med javascript. Den som skapar webbplats får själv välja om den vill använda ID eller class men det är alltid viktigt att komma ihåg deras användningsområde för att behålla funktionalitet. (REF6)</p>
+			<p>På denna webbsida används det mest class med flera anledningar: det används ingen direkt länk till webbsidans delar, javascript används inte samt det var svårt att bestämma sig för om element skulle vara unika eller inte pga min oerfarenhet. ID används på några ställen mest för övningens skull eftersom class fungerar bra.
+			</p>
+
+			<h2>Media queries</h2>
+			<p>Denna webbsida har 5 stycken media queries. Av dessa gör fyra att sidans innehåll anpassas till mindre skärm storlek, femte media querie anpassar sidans innehåll för utskrift.</p>
+			<p>Brytpunkten valdes när det inte fanns plats för innehållet (brytpunkt vid 1035px för mindre skärmar), 880px (för ipads), 643px (ännu mindre) och 541px (anpassas även till de minsta telefonerna) . För att försäkra att innehållet skulle synas bra även på mobilskärmar, användes funktionen "develop - responsive design mode” i Safari. Denna funktion simulerar hur webbsidans innehåll ska se ut på skärmar av olika apple enheter (safari, ipad och iphone). Det är bra att välja brytpunkter baserat på när man ser att sidan går sönder istället för att räkna med specifika skärmstorlekar. (ref7)
+			</p>
+
+
+			<h2>Relativa enheter</h2>
+			<p>Storleksenheter som används i denna webbsida är "em", "px", "%", "rem" och "ch". Man kan med fördel kombinera användningen av olika enheter dock är det gynnsamt att använda sig av relativa enheter istället för absoluta enheter med tanke på responsiv design. (ref8, ref9). Relativa enheter anpassar sin storlek relativt till sitt föräldraelement så till viss del förekommer automatisk storleksändring när man ändrar på viewportens storlek. För typsnittsstorleken använder jag alltid rem (root element measurement) så att typsnittens storlek alltid baseras på typsnittsstorleken som är beskriven i html (16px).
+			</p>
+
+			<h2>Typssnitt och färger</h2>
+			<p>Jag valde att använda mig av två google fonts samt helvetica och sans-sarif som back-up ifall dessa inte kan laddas upp av webbläsaren. Jag valde ursprungligen att inte ladda ner typsnitten utan länka direkt till google.fonts webbsidan (detta gör jag i HTML5 versionen). På det viset är det enklare att ändra typsnitt om jag vill det i framtiden. Laddningstiden för denna typsnitt är något långsammare än om jag hade laddat ner dem till min dator och lagt in de i webbsidan mha @fontface. (ref10)</p>
+			<p>För att kunna lägga in google fonts till xhtml versionen av webbplatsens huvudsida valde jag att ladda ner typsnitt och lägga dem in mha @fontface. Jag gjorde såhär eftersom XHTML validatorn ville inte godkänna inlänkade stylesheet från google.</p>
+			<p>För att behålla läsbarhet av texten har jag valt mörk färg på texten och vit bakgrund. Färgerna i denna sida är rosa, gul, svart, vit och grå och detta är konsekvent genom hela webbplatsen. </p>
+
+
+			<h2>Källor:</h2>
+			<p>ref1: T. Atkins, E. J. Etemad, R. Atanassov, O.Brufau: CSS Grid Layout Module Level 1. 2020. url: https://www.w3.org/TR/2020/CRD-css-grid-1-20201218/</p>
+
+			<p>Ref 2: Andrew Rachel: Best Practices With CSS Grid Layout
+				. 2018. url:https://www.smashingmagazine.com/2018/04/best-practices-grid-layout/</p>
+
+			<p>ref 3: Lazaris Louis: The Z-Index CSS Property: A Comprehensive Look. 2009. url:
+				https://www.smashingmagazine.com/2009/09/the-z-index-css-property-a-comprehensive-look/</p>
+
+			<p>ref4: Andrew Rachel:Understanding CSS Grid: Grid Template Areas. 2020. url: https://www.smashingmagazine.com/understanding-css-grid-template-areas/</p>
+
+			<p>ref5:3-8: Introducing HTML5 footer, header, nav, article, section and aside elements – Bioinformatics Web Development. 2022. url: http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/introducing-html5-footer-header-nav-article-section-and-aside-elements/</p>
+
+
+
+			<p>ref6: Gallagher James: ID vs Class CSS: Understanding the Differences. 2020. url:
+				https://careerkarma.com/blog/css-class-vs-id-2/</p>
+
+			<p>ref7: Nimritee: How To Use CSS Breakpoints For Responsive Design . 2021. url:https://www.lambdatest.com/blog/how-to-use-css-breakpoints-for-responsive-design/</p>
+
+			<p>ref8:
+				Powell Kevin: Why you shouldn't set font-sizes using em (video). url:https://m.youtube.com/watch?v=pautqDqa54I </p>
+
+			<p> ref9:
+				Mitchel Jess: CSS Units explaned. 2020. url: https://www.digitalocean.com/community/tutorials/css-css-units-explained</p>
+
+			<p>ref10: Pollard Barry.Should you self-host Google Fonts?.2022.url: https://www.tunetheweb.com/blog/should-you-self-host-google-fonts/</p>
+
+
+
+
+		</article>
+
+
+
+
+		<footer>
+			<div class="infobox">
+				<div class="adress-box">
+					<h3>Adress:</h3>
+					<p class="infobox-text">Svankärssvägen 8P
+						<br>Uppsala 786 53
+					</p>
+				</div>
+
+				<div class="telefon">
+					<h3>Telefon:</h3>
+					<p class="infobox-text">073 398 4440</p>
+
+				</div>
+
+				<div class="e-mail">
+					<h3>e-post</h3>
+					<p class="infobox-text">barbora.gustafsson@gmail.com</p>
+				</div>
+			</div>
+
+
+
+
+			<div id="credits">
+				<p>Barbora Gustafsson ®2022</p>
+			</div>
+		</footer>
+		<!--text markeras med "footer" för att visa till webbläsaren och skärmläsaren vad denna del av webbsidan handlar om.-->
+
+	</div>
+
+
+</body>
+
+</html>

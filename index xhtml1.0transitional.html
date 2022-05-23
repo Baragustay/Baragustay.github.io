@@ -1,0 +1,245 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="sv">
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Barbora Gustafsson" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+	<title>Barbora Gustafsson</title>
+	<link rel="stylesheet" href="test.css" />
+	<link rel="stylesheet" type="text/css" href="test-print.css" media="print" />
+
+
+
+	<style type="text/css">
+		/*XHTML transitional använder inte taggen  header,footer och nav som jag använde i markering av delar i HTML5 filen. Därför gör jag en style ändring här för att behålla önskad utseende*/
+		#header {
+			display: grid;
+			grid-column: 1/4;
+			grid-row: 1/3;
+			position: relative z-index: 0;
+		}
+
+		#footer {
+			text-align: center;
+			grid-column: 1/4;
+			grid-row: auto;
+		}
+/*importerar font mha @font-face istället för att länka till google fonts som jag gjorde i HTML5 filen pga i XHTML transitional fungerar inte alla taggar som används av google*/
+		@font-face {
+			font-family: 'League Spartan';
+			src: url(fonts/League_Spartan/LeagueSpartan-Regular.ttf) format('ttf');
+			src: url(fonts/League_Spartan/LeagueSpartan-Regular.woff) format('woff');
+			font-style: normal;
+			font-weight: 400;
+		}
+
+		@font-face {
+			font-family: 'League Spartan';
+			src: url(fonts/League_Spartan/LeagueSpartan-SemiBold.ttf) format('ttf');
+			src: url(fonts/League_Spartan/LeagueSpartan-SemiBold.woff) format('woff');
+			font-style: normal;
+			font-weight: 600;
+		}
+
+		@font-face {
+			font-family: 'League Spartan';
+			src: url(fonts/League_Spartan/LeagueSpartan-Thin.ttf) format('ttf');
+			src: url(fonts/League_Spartan/LeagueSpartan-Thin.woff) format('woff');
+			font-style: normal;
+			font-weight: 100;
+		}
+
+		@font-face {
+			font-family: "Montserrat";
+			src: url(fonts/Montserrat/Montserrat-Light.ttf) format('ttf');
+			src: url(fonts/Montserrat/Montserrat-Light.woff) format('woff');
+			font-style: normal;
+			font-weight: 300;
+		}
+
+		@font-face {
+			font-family: "Montserrat";
+			src: url(fonts/Montserrat/Montserrat-SemiBold.ttf) format('woff');
+			src: url(fonts/Montserrat/Montserrat-SemiBold.woff) format('woff');
+			font-style: normal;
+			font-weight: 600;
+		}
+
+		@font-face {
+			font-family: "Montserrat";
+			src: url(fonts/Montserrat/Montserrat-Bold.woff) format('woff');
+			src: url(fonts/Montserrat/Montserrat-Bold.ttf) format('ttf');
+			font-style: normal;
+			font-weight: 700;
+
+
+		}
+
+	</style>
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+	<div class="main-grid">
+		<!--jag använder grid layout för hela webplatsen, den fungerar som wrapper för sidans innehåll-->
+
+		<div id="header">
+			<div class="logo-container"><a href="index.html" title="Home" class="logo-home-link">
+					<img src="images/logo.png" class="logo" alt="logo" /> </a>
+				<!--sidans logga som fungar även som en home button-->
+			</div>
+
+			<div id="white-line"></div>
+
+			<div id="main-navigation-container">
+				<!--websidans navigation wraps in en nav tag, den är lämpligare än endast div med tanke på skärmläsaren, samtidigt visar taggen att denna del hanldar om kopling mellan webplatsens huvuddelar-->
+
+				<ul class="nav-menu">
+
+					<li><a href="about.html" class="navigation">Om mig</a></li>
+
+					<li><a href="services.html" title="services" class="navigation">Mina tjänster </a></li>
+
+					<li><a href="Showcase.html" title="Showcase" class="showcase">Showcase</a></li>
+
+					<li><a href="kontakt.html" title="kontakt" class="navigation">kontakt</a></li>
+
+				</ul>
+
+
+
+
+			</div>
+			<div class="hero-text-container">
+				<p class="hero-text"> <span class="hero-sentences-background hero-text-row1">Din<span class="letter-pink"> personliga </span>mediabyrå</span>
+					<span class="hero-sentences-background hero-text-row2">Jag tar hand om responsiv webdesign<span class="hero-text-row2-SEO">, SEO,</span></span>
+					<span class="hero-sentences-background hero-text-row3">digital marknadsföring och sociala medier.</span>
+				</p>
+			</div>
+		</div>
+
+
+		<div class="hero-image"> </div>
+
+
+
+		<div id="circle-image-container1">
+			<!--alla "circle container innebär plats på grid-->
+			<img src="images/brand.jpg" class="circle1-image-position" alt="cooperation" />
+		</div>
+
+		<div id="column1">
+			<h1>Ditt varumärke,<br />
+				Din hemsida</h1>
+
+			<p class="column-intro">
+				Jag vill göra det enkelt för dig, därför har jag samlat en bred kompetens för ditt projekt:
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+
+
+		</div>
+
+
+		<div id="circle-image-container2">
+			<img src="images/face.jpg" class="circle2-image-position" alt="face" />
+		</div>
+
+		<div id="column2">
+			<h1>Söker du en pålitlig webbyrå?</h1>
+
+			<p class="column-intro">
+				Söker du en tillförlitlig samarbetspartner till ditt nästa webbprojekt? Då kan du sluta leta.
+			</p>
+			<p class="what-i-do-highlight">
+				logotyper<br />sökmotoroptimering (SEO)<br />digital marknadsföring<br />support<br />ökad närvaro på sociala medier</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+
+		</div>
+
+
+		<div id="circle-image-container3">
+			<img src="images/postit.jpg" alt="post-it" class="circle3-image-position" />
+		</div>
+
+		<div id="column3">
+			<h1>Såhär går det till</h1>
+			<br />
+
+			<p class="column-intro">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			</p>
+
+			<!--text i kolumnerna är markerad som div och p. Anledningen till det är att texten är endast kortfattad info om webbsidans innehål.-->
+
+		</div>
+
+		<div id="footer">
+			<div class="infobox">
+				<div class="adress-box">
+					<h3>Adress:</h3>
+					<p class="infobox-text">Svankärssvägen 8P
+						<br />Uppsala 786 53
+					</p>
+				</div>
+
+				<div class="telefon">
+					<h3>Telefon:</h3>
+					<p class="infobox-text">073 398 4440</p>
+
+				</div>
+
+				<div class="e-mail">
+					<h3>e-post</h3>
+					<p class="infobox-text">barbora.gustafsson@gmail.com</p>
+				</div>
+			</div>
+
+
+
+
+
+
+			<div id="credits">
+				<p>Barbora Gustafsson ®2022</p>
+			</div>
+			<!--jag ger denna delen av footern sin egen ID för att kunna exkludera den när jag ska skriva ut sidan-->
+		</div>
+		<!--text markeras med "footer" för att visa till webbläsaren och skärmläsaren vad denna del av webbsidan handlar om.-->
+
+
+
+
+
+	</div>
+
+
+
+
+</body>
+
+</html>

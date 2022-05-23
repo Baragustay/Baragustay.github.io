@@ -1,0 +1,1107 @@
+/*
+OM DENNA CSS FILEN:
+
+Denna css fil tillhör alla sidor av webbplatsen. Delar av css är markerade med rubriker som beskriver vilken del av webbplats de tillhör. 
+På raden 535 börjar media queries som anpassar utseendet (2 stycken). Till slut kommer en generell media query som anpassar utseendet vid utskrift för alla sidor av webbplatsen. 
+En särskilt media query finns i en separat  fil som endast tillhör startsidan av webbplatsen. Denna är gjort nogrannare. 
+
+Innehåll:
+
+RESET: rad 27-33
+HTML+BODY+TYPOGRAFY: rad 35-121
+HUVUDSIDAN: rad 122-368
+SHOWCASE: rad 443-456
+KONTAKT: rad 390-436
+MINA TJÄNSTER: 456-554
+OM MIG: 556-603;
+
+@MEDIA QUERY 1035px: rad 603-698
+@MEDIA QUERY 880px: rad 700-958
+@MEDIA QUERY 643px: rad 959-989
+@MEDIA QUERY 541px: rad 990-1043
+@MEDIA QUERY print general: rad 1045-1098
+
+*/
+
+/*RESET*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: circle;
+
+}
+
+html {
+	font-size: 16px;
+	/*font storlek som alla kommande font storlekar utgår från*/
+}
+
+body {
+	font-family: 'Montserrat', helvetica, sans-serif;
+	/*font family för hela webbplatsen*/
+	line-height: 2.5;
+	/*större rad avståd för att föränkla läsningen*/
+	background-color: white;
+	color: #222;
+	padding: 0em;
+	margin: 0;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/**********************TYPOGRAFI***************** Fonts from google:
+'League Spartan',
+'Montserrat',
+*/
+
+
+
+body {
+	font-size: 16px;
+}
+
+h1 {
+	text-align: center;
+	font-family: "League Spartan", helvetica, sans-serif;
+	/*google font*/
+	font-size: 1.9rem;
+	line-height: 1.3em;
+	padding: 1em;
+	font-weight: 400;
+
+
+
+}
+
+h2 {
+	color: #FFC900;
+	font-size: 1.1rem;
+	text-align: center;
+	font-size: 1rem;
+	padding: 1em;
+	font-family: 'Montserrat', helvetica, sans-serif;
+	font-weight: 600;
+
+
+
+
+
+}
+
+h3 {
+	color: #FFC900;
+	font-size: 1.1rem;
+	text-align: center;
+	font-size: 1rem;
+	padding: 0.3em;
+	font-family: 'Montserrat', helvetica, sans-serif;
+		font-weight: 600;
+
+}
+
+
+
+.column-intro {
+	font-size: 1.2em;
+	padding: 1em;
+	font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+.what-i-do-highlight {
+	color: #FFC900;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.1rem;
+	padding: 1em;
+	font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+p {
+	font-size: 1rem;
+	padding: 1em;
+	font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+/***********************************HUVUDSIDAN**************************/
+
+.main-grid {
+	display: grid;
+	/*inställning som gör att allt kan placeras inom en grid*/
+	max-width: 1500px;
+	margin: 0 auto;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+	background-color: #F5F5F5;
+	overflow: hidden;
+	height: 100%;
+
+}
+
+/*I choose to use grid layot because it's easy to manipulate with different objects within  the grid. The grid works as a wrapper for the whole layout of the page eg everything visible on the page is within the main grid.*/
+
+header {
+	/*taggen header är runt alla sidhuvudets element: logga, navigation, hero-text. Headern är vikgtigt pga htmls semantiska betydelse*/
+	display: grid;
+	grid-column: 1/4;
+	grid-row: 1/3;
+	position: relative;
+}
+
+.logo {
+
+	max-width: 15em;
+	border-radius: 0 0 0.3em 0.3em;
+}
+
+.logo-container {
+	/*det var viktigt att lägga bilden inuti en container för att kunna placera den precis var jag vill. Det var även vikgtigt för att kuna använda bild på logo som en länk*/
+	grid-row: 1;
+	grid-column: 1;
+	z-index: 5;
+	justify-self: right;
+	position: relative;
+}
+
+#white-line {
+	/*Denna vita linje blev finare en endast bakgrund för menyn. Linjen går genom alla kolumner på grid och skapar vit bakgrund för navigation som ökar läsbarheten*/
+	background-color: white;
+	z-index: 4;
+	grid-row: 1;
+	grid-column: 1/4;
+	height: 3em;
+	margin-top: 1em;
+}
+
+#main-navigation-container {
+	display: flex;
+	grid-column: 2/4;
+	grid-row: 1;
+	z-index: 4;
+	/*ställer z-index pga elemementet ligger ovapå en annan*/
+	position: relative;
+	margin-top: 2em;
+}
+
+/*det visade sig vara enklast att använda sig av flexbox för att få rätt storlek och responsivitet av menyn.*/
+
+
+.nav-menu {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 6em;
+	/*här använde jag margin för att flytta hela menyn åt höger så att den inte krockar med logo bilden*/
+	margin-right: 1.5em;
+	/*så att det kvarstår lite luft på höger sida av menyn när man minskar viewporten*/
+	justify-content: space-evenly;
+	padding: 0.2em;
+	position: relative;
+	bottom: 1em;
+	border-radius: 0.3em;
+
+
+}
+
+.nav-menu li {
+	list-style: none;
+	display: inline-block;
+	/*skapar önskad utseende: delar av menyn hamnar i en rad*/
+	/*för att få läknarna stanna på samma rad*/
+	text-align: center;
+	padding: 0em 1em;
+
+
+
+
+
+
+}
+
+
+.nav-menu a {
+	color: white;
+	text-decoration: none;
+	padding: 0.5em;
+	font-weight: 600;
+	text-transform: uppercase;
+	/*ställer fontstorlek mha css istället för att skriva i uppercase pga det var enklare när jag använder samma css fil till alla samt pga screen readers som kan läsa stora bokstäver på olika sätt. */
+	font-family: 'Montserrat';
+	/*det var inte nödvändigt att skriva vilken font family ska finnas här pga den är redan definierat i body delen, jag valde att behålla det här ändå för att ha koll på typssnitt font används här*/
+	/*background: rgba(0, 0, 0, 0.2);*/
+	border-radius: 0.3em;
+	color: black;
+
+
+
+
+
+}
+
+
+.nav-menu a:hover {
+	color: #FFC900;
+	transition: all .4s;
+
+}
+
+.nav-menu a.navigation-current {
+	color: #FFC900;
+	text-decoration: underline;
+
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus {
+
+	text-decoration: underline;
+}
+
+
+.hero-text-container {
+	/*det var svårt att få text på rätt plats. Anledningen är att jag valde att endast använda 3 kolumner i min grid layout. Detta betyder att saker som inte får riktigt plats på grid måste placeras mha "position: relative". Det är svårt, tar tid och är inte praktiskt. Nästa gång skulle jag jobba med fler grid kolumner. Jag har valt att behålla endast 3 kolumner pga tidsbrist och saker och ting på webbsidan ser faktiskt ut som jag vill. */
+	grid-column: 1/4;
+	grid-row: 2/3;
+	position: relative;
+	z-index: 2;
+	bottom: 4.5em;
+	justify-self: center;
+
+}
+
+.letter-pink {
+	color: #BB4287;
+
+}
+
+.hero-text {
+	font-size: 1.5rem;
+	font-family: 'Montserrat';
+	/*font från google fonts*/
+	font-weight: 200;
+	z-index: 2;
+	line-height: 2.3em;
+	white-space: pre-line;
+	/*jag behövde få textens olika meningar att börja på ny rad*/
+	border-radius: 0.2em;
+	padding: 0.4em;
+	background-color: rgba(250, 250, 250, 0.94);
+	padding: 1em;
+	border-bottom: #BB4287 20px solid;
+
+
+}
+
+.hero-text-row1 {
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	color: grey;
+
+}
+
+
+div .hero-image {
+	grid-column: 1/4;
+	grid-row: 1/3;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.0)), url(images/hero1.jpg);
+	/*flyttar bilden med 50% för att delen av den synas*/
+	position: relative;
+	max-width: 100%;
+	/*alltid bra att ställa "max-width" istället för "width" pga responsivitet*/
+	background-size: cover;
+	z-index: 0;
+	height: 30em;
+	border-bottom-left-radius: 1%;
+	border-bottom-right-radius: 1%;
+	margin-bottom: 5em;
+	/*skapar mellanrum mellan hero bilden och kolumnerna. Här hade jag val att antigen göra margin på varje kolumn (margin-top) eller att göra det på her-bilden (margin-bottom). Resultatet blir detsamma. Jag valde att sätta margin på hero bilde för att skriva kortare kod. */
+	background-position: 50% 40%;
+
+}
+
+
+.circle1-image-position,
+.circle2-image-position,
+.circle3-image-position {
+	border-radius: 50%;
+	bottom: 9em;
+	z-index: 2;
+	border: 1em solid white;
+	max-width: 14em;
+	position: relative;
+	/*jag väljer att använda bilder som är 250px x 250px stora och sedan göra de runda mha css. Det kändes enklare än att skapa dem i krita. Samtidigt ger detta mig möjlighet att anpassa bilderna lite (storlek, jag kan ändra mig och ha bilderna rektangulära om jag vill)*/
+
+
+}
+
+
+.circle1-image-position {
+	position:
+		absolute;
+	right: 7em;
+}
+
+
+.circle3-image-position {
+	position: absolute;
+	left: 7em;
+	/*den absoluta positioneringen gör att bilderna vill inte åka till mitten av sidan när man minskar viewporten*/
+}
+
+
+
+
+#circle-image-container1 {
+	grid-column: 1/2;
+	grid-row: 3/4;
+	position: relative;
+	/*bildernas position på grid. Det vore lättare om jag har använt mig av fler kolumner och rader vid byggnation av denna layout. Jag klarade att placera bilderna där jag ville ha dem men det finns enklare sätt att göra det (använda fler grid-columner och rader). Det vet jag till nästa gång*/
+
+
+
+
+
+}
+
+#circle-image-container2 {
+	grid-column: 2/3;
+	grid-row: 3/4;
+	justify-self: center;
+
+}
+
+#circle-image-container3 {
+	grid-column: 3/4;
+	grid-row: 3/4;
+	position: relative;
+
+
+
+}
+
+#column1,
+#column2,
+#column3 {
+	position: relative;
+	bottom: 0em;
+	background: white;
+	padding-top: 6em;
+	/*paddingen skuter ner texten så att bilden får plats*/
+	max-width: 21em;
+	border: 1px solid rgba(187, 66, 135, 0.1);
+	border-radius: 1em;
+	grid-row: 3/5;
+
+}
+
+#column1 {
+	grid-column: 1/2;
+	justify-self: right;
+
+}
+
+#column2 {
+	grid-column: 2/3;
+	justify-self: center;
+
+}
+
+#column3 {
+	grid-column: 3/4;
+	justify-self: left;
+}
+
+/*det är inte nödvändigt att ställa grid-column och grid row för dessa element pga de kommer att ligga på dessa ställen ädnå automatiskt. Jag valde dock att skriva exakt vart dem ska ligga för att försäkra deras plats vid möjliga ändringar i framtiden, samtidigt hjälper det (mig) att se deras placering när jag sedan flyttar dem ner under varandra mha media query*/
+
+
+.infobox {
+	display: flex;
+	/*för att kunna ha 3 divs på en rad valde jag att använda flexbox. Med att den automatisk skapar en rad med objekt var det lätt att skapa önkade utseende*/
+	justify-content: space-around;
+	text-align: center;
+	flex-wrap: wrap;
+	/*viktigt för att behålla texten i viewporten, istället för att göra overflow när det inte finns mer plats för texten, staplas text delar på varandra.*/
+	grid-column: 1/4;
+	grid-row: auto;
+	/*med att den ligger nästan längst ner i html placeras den automatisk på rätt ställe. Jag vill inte ställa rad nummer för den pga den flyttas beroende på texten som ligger ovanpå infoboxen.*/
+	background-color: white;
+	margin-top: 15em;
+	/*ger mellanrum mellan sig själv och texten som ligger ovan*/
+	padding: 0.2em;
+	line-height: 1em;
+}
+
+.infobox-text {
+	padding: 0.5em;
+	line-height: 1em;
+}
+
+footer {
+	text-align: center;
+	grid-column: 1/4;
+	grid-row: auto;
+}
+
+/**********STYLING TILL ANDRA SIDOR AV WEBBPLATSEN*******SHOWCASE*KONTAKT*OM MIG*MINA TJÄNSTER***********************************/
+
+/***********************SHOWCASE***********************************************************************************/
+#Uppgift-text {
+	grid-column: 1/4;
+	background-color: white;
+	margin: 0 auto 4em auto;
+	padding: 1em;
+	/*lägger till extra padding för att underlätta läsbarhet när det handlar om mycket text*/
+	border-radius: 0.3em;
+	max-width: 72ch;
+	/*begrensar antal täcken på rad för att underlätta läsbarheten av texten, sådan antal underlättar läsningen för läsaren*/
+	border: 1px solid rgba(187, 66, 135, 0.1);
+}
+
+/************* KONTAKT***************************************************************************************************/
+/*här har jag kopierat koden från W3C och bara anpassat utseendet lite grann*/
+
+input[type=text],
+select,
+textarea {
+	width: 100%;
+	padding: 1em;
+	border-radius: 0.3em;
+	box-sizing: border-box;
+}
+
+
+input[type=submit] {
+	background-color: #FFC900;
+	color: white;
+	padding: 1.5em 2em;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+	background-color: #BB4287;
+}
+
+/* Add a background color and some padding around the form */
+.container-form {
+	grid-column: 1/4;
+	max-width: 72ch;
+	margin: 0em auto 4em auto;
+	border-radius: 0.3em;
+	background-color: white;
+	padding: 1em;
+	position: relative;
+	border: 1px solid rgba(187, 66, 135, 0.1);
+}
+
+.container-line {
+	/*sträck som uppdelar rubriken och formulären gjorde jag mha border*/
+	border-bottom: solid 1px;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+/*********MINA TJÄNSTER**************/
+
+.service-columns {
+	background: white;
+	border-radius: 0.3em;
+	min-height: 25em;
+	text-align: center;
+	border: 1px solid rgba(187, 66, 135, 0.1);
+
+}
+
+.service-column1 {
+	padding: 1em;
+	margin: 0 0.5em 0.5em 2em;
+
+}
+
+.service-column2 {
+	background-image: url(images/designstudio.jpg);
+	background-size: cover;
+	margin: 0 0.5em 0.5em 0.5em;
+}
+
+.service-column3 {
+	padding: 1em;
+	margin: 0 2em 0.5em 0.5em;
+}
+
+.service-column4 {
+	background-image: url(images/social-media-image.jpg);
+	background-size: cover;
+	margin: 0.5em 0.5em 4em 2em;
+}
+
+.service-column5 {
+	margin: 0.5em 0.5em 4em 0.5em;
+	padding: 1em;
+}
+
+.service-column6 {
+	background-image: url(images/webdesign.jpg);
+	background-size: cover;
+	margin: 0.5em 2em 4em 0.5em;
+}
+
+.icons-box1 {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	border: solid;
+	align-self: center;
+
+}
+
+/*********************OM MIG******************************************************/
+
+.about-columns {
+	background: white;
+	border: 1px solid rgba(187, 66, 135, 0.1);
+
+
+}
+
+.about-column1 {
+	grid-column: 1/3;
+	margin: 0 0.5em 4em 2em;
+	border-radius: 0.3em 0em 0em 0.3em;
+}
+
+.about-column2 {
+	grid-column: 3/4;
+
+	margin: 0 2em 4em 0.5em;
+	border-radius: 0 0.3em 0.3em 0;
+
+}
+
+.list-container {
+	padding: 2em;
+}
+
+
+.photo-me-container {
+	/*container som ställer fast storlek på bilden inuti och förhidrar overflow*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*gör att bilden är centrerad*/
+	margin: 2em;
+	/*gör att bilden automatisk anpassar sin storlek enligt skärmstorleken*/
+
+}
+
+.photo-me-container img {
+
+	max-width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/*fungerar på samma sätt som background image-cover, fyller i hela containern*/
+	border-radius: 0.3em;
+
+}
+
+
+
+/************************@MEDIA**********************************************************************************************************************************************/
+@media screen and (max-width: 1035px) {
+
+	.nav-menu li {
+		padding: 0em 0.2em;
+	}
+
+	#column1 {
+		grid-column: 1/3;
+		grid-row: 4/5;
+		justify-self: center;
+		bottom: 14em;
+		max-width: 19em;
+		padding-top: 3em;
+	}
+
+	#column2 {
+		grid-column: 2/4;
+		grid-row: 4/5;
+		justify-self: center;
+		bottom: 14em;
+		max-width: 19em;
+		padding-top: 3em;
+	}
+
+	#column3 {
+		grid-column: 1/4;
+		grid-row: 6/7;
+		justify-self: center;
+		bottom: 14em;
+		min-width: 35em;
+		min-height: 15em;
+
+	}
+
+	#circle-image-container3 {
+		grid-column: 2/3;
+		grid-row: 5/6;
+		justify-self: center;
+
+	}
+
+	.circle3-image-position {
+		grid-column: 2/3;
+		grid-row: 5/6;
+		border-radius: 50%;
+		z-index: 2;
+		border: 1em solid white;
+		position: relative;
+		justify-self: center;
+		left: 0em;
+	}
+
+	.circle1-image-position {
+		position: relative;
+		right: 0em;
+	}
+
+
+
+
+	#circle-image-container1 {
+		grid-column: 1/3;
+		justify-self: center;
+
+	}
+
+
+	#circle-image-container2 {
+		grid-column: 2/4;
+		position: relative;
+		justify-self: center;
+	}
+
+	/***************OM MIG************/
+	.about-column1 {
+		grid-column: 1/4;
+		grid-row: 3/4;
+		margin: 0em 2em 0.5em 2em;
+		border-radius: 0.3em 0.3em 0.3em 0.3em;
+
+	}
+
+	.about-column2 {
+		grid-column: 1/4;
+		grid-row: 4/5;
+		margin: 0.4em 2em 6em 2em;
+		border-radius: 0.3em 0.3em 0.3em 0.3em;
+
+	}
+
+
+
+
+}
+
+/************************@MEDIA**********************************************************************************************************************************************/
+
+@media screen and (max-width: 880px) {
+
+	/**********************TYPOGRAFI******************/
+
+	.infobox-text {
+		font-size: 0.75rem;
+	}
+
+	h3 {
+		font-size: 0.8rem;
+		padding-bottom: 0;
+	}
+
+
+
+
+	.main-grid {
+		grid-template-columns: 1fr;
+		/*vid mindre upplösning ska alting finnas i en kolumn, många <div>s framöver behöver endast ändra sing placering på gird*/
+	}
+
+	.logo-container {
+		grid-column: 1/2;
+		justify-self: center;
+		margin-bottom: 26em;
+
+
+		/*denna inställningen är hos de flesta <div>s pga den försäkrar responsivitet*/
+
+	}
+
+	.logo {
+		min-height: 1px;
+
+	}
+
+
+	#white-line {
+		display: none;
+	}
+
+
+	.hero-text-container {
+		display: flex;
+		/*inställning som gör att funktion "justify-content" kan användas och därmed ligger text exakt i mitten av sidan*/
+		grid-column: 1;
+		grid-row: 1;
+		width: 70%;
+		min-height: 1px;
+		top: 2em;
+		margin: 0;
+		align-self: center;
+	}
+
+	.hero-text {
+		width: 100%;
+		min-height: 1px;
+		font-size: 1.2rem;
+		text-align: center;
+
+
+	}
+
+
+
+
+	#main-navigation-container {
+		grid-column: 1;
+		/*flyttar navigation under logo, måste flyttas på det viset pga båda ligger i samma grid-row*/
+		grid-row: 1;
+		margin-bottom: 14em;
+		min-height: 1px;
+		align-items: stretch;
+
+	}
+
+	.nav-menu {
+		margin: auto;
+		/*background-color: white;
+		border: 0.3px solid rgba(227, 226, 226, 0.4);*/
+		align-items: stretch;
+
+	}
+
+
+
+	.nav-menu li {
+		padding: 0.2em;
+		line-height: 2.3em;
+	}
+
+	.nav-menu a {
+		color: black;
+		/*background-color: transparent;*/
+		background-color: rgba(250, 250, 250, 1);
+
+
+	}
+
+	.nav-menu a:hover {
+		color: #BB4287;
+
+		;
+		transition: all .4s;
+	}
+
+	.nav-menu a.navigation-current {
+		color: #BB4287;
+
+
+	}
+
+	/*alting måste flyttes så att alla saker som tidigare var bredvid varandra ska nu vara i en kolumn*/
+	.circle1-image-position,
+	.circle2-image-position,
+	.circle2-image-position3 {
+		grid-column: 1;
+		justify-self: center;
+		position: relative;
+		right: 0em;
+		width: 100%;
+		min-height: 1px;
+
+	}
+
+	#circle-image-container2,
+	#circle-image-container3,
+	#circle-image-container3 {
+		grid-column: 1;
+		position: relative;
+		left: 0em;
+		right: 0em;
+		justify-self: center;
+		min-height: 1px;
+
+
+	}
+
+	#circle-image-container1 {
+		grid-row: 5/6;
+		left: 0em;
+		justify-self: center;
+
+	}
+
+	#circle-image-container3 {
+		grid-row: 7/8;
+
+
+	}
+
+	#column1,
+	#column2,
+	#column3 {
+		grid-column: 1/2;
+		min-width: 1px;
+		width: 100%;
+		max-width: 25em;
+	}
+
+	#column1 {
+		grid-row: 6/7;
+	}
+
+	#column3 {
+		grid-row: 8/9;
+		min-height: 0;
+
+
+	}
+
+
+	.infobox {
+		grid-column: 1;
+		position: fixed;
+		z-index: 2;
+
+		/*position: fixed tillsammans med bottom:0 fixerar infoboxens placering till nedersta delen av viewporten*/
+		width: 100%;
+		min-height: 1px;
+		bottom: 3em;
+		/*så att footern inte göms bakom infoboxen*/
+		background-color: rgba(0, 0, 0, 0.60);
+		color: white;
+		/*senare ändrar jag färgen till svart så att det syns tydligare att det är en element som ligger ovanpå webbsidans text*/
+
+
+	}
+
+
+
+
+
+	footer {
+		grid-column: 1;
+		grid-row: 10/11;
+		margin-top: 8em;
+		/*ger mer luft ovanpå sig, därmed hindrar infobox från att gömma texten vid mindre skärmstorlek*/
+
+	}
+
+	/***************MINA TJÄNSTER**************/
+
+	.service-column1 {
+		grid-row: 3;
+
+	}
+
+	.service-column2 {
+		grid-row: 4;
+
+	}
+
+	.service-column3 {
+		grid-row: 5;
+	}
+
+	.service-column4 {
+		grid-row: 6;
+
+	}
+
+	.service-column5 {
+		grid-row: 7;
+	}
+
+	.service-column6 {
+		grid-row: 8;
+
+	}
+
+	.service-columns {
+		grid-column: 1;
+		margin: auto;
+		width: 100%;
+		padding: 0;
+		padding: 5em;
+		/*ger text centrerad position*/
+	}
+
+	/********************KONTAKT****************************/
+	.container-form {
+		margin: 0em 1em 4em 1em;
+		justify-self: center;
+	}
+
+	/********************SHOWCASE****************************/
+	#Uppgift-text {
+		margin: 0em 1em 4em 1em;
+		grid-column: 1/2;
+		min-width: 1px;
+		justify-self: center;
+
+	}
+
+}
+
+@media screen and (max-width: 643px) {
+	.hero-text {
+
+		font-size: 1rem;
+		width: 100%;
+	}
+
+	.hero-text-row1 {
+		font-size: 0.7em;
+	}
+
+
+	.nav-menu {
+
+		display: flex;
+		margin-top: 8em;
+
+	}
+
+	.nav-menu {
+
+		align-items: stretch;
+		width: 100%;
+	}
+
+	#Uppgift-text {
+		width: 100%;
+		/*gör att texten alltid stannar i viewporten*/
+
+	}
+}
+
+@media screen and (max-width: 541px) {
+	/*inställninger som burde funka för alla mobilskärmar, även de minsta*/
+
+
+	.hero-text-row3 {
+		display: none;
+
+	}
+
+	.hero-text-row2-SEO {
+		display: none;
+	}
+
+	/*jag väljer att ta bort sista raden av texten pga i mindre skärmstorlek blir det för mycket text*/
+
+	.hero-text-container {
+		width: 90%;
+		/*behåller lite lugt på sidor och ger liknanande utseende som i srörre skärmstorlekar*/
+
+
+
+	}
+
+	.hero-text-row1,
+	.hero-text-row2,
+	.hero-text-row3 {
+		line-height: 0.5em;
+	}
+
+	.hero-text {
+		height: 9em;
+
+
+
+	}
+
+	.nav-menu a {
+		font-size: 0.9em;
+		padding: 0.2em;
+
+	}
+
+	/*allting måste vara lite mindre för att få plats på samma rad*/
+
+	.nav-menu li {
+		padding: 0em 0em;
+
+	}
+
+
+	.about-columns {
+		width: 100%;
+		justify-self: center;
+	}
+
+}
+
+/*************************Generella utskrift instruktioner för alla sidor på webbplatsen*******************/
+@media print {
+
+
+	#main-navigation-container,
+	.hero-image,
+	.hero-text-container {
+		display: none;
+	}
+
+	* {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		/*för att kunna skriva ut även bilder från css som används som cover -finns i Mina tjänster. Fungerar i alla webbläsare förutom IE.*/
+	}
+
+	.infobox {
+		background-color: transparent;
+		font-size: 0.75rem;
+		margin: 0 1em 0 1em;
+		padding: 0em;
+		border: 0.1em solid;
+
+	}
+
+	.infobox p {
+		font-size: 0.75rem;
+		/*borde motsvara font storlek 12 som oftast används i word-document*/
+	}
+
+	p {
+		font-size: 0.75rem;
+	}
+
+	h1 {
+		font-size: 1.4rem;
+	}
+
+
+	#credits {
+		display: none
+			/*såhär syns endast delen med adress, epost och telefonnummer*/
+
+	}
+
+	.main-grid {
+		background-color: transparent;
+		line-height: 1em;
+	}
+
+	.service-columns {
+		min-height: 5em;
+	}
+	}
+	

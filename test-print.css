@@ -1,0 +1,79 @@
+#main-navigation-container,
+div .hero-image,
+.hero-text-container {
+	display: none;
+}
+
+p {
+	font-size: 0.75rem;
+}
+
+h1 {
+	font-size: 1.4rem;
+}
+
+.column-intro {
+	font-size: 1rem;
+}
+
+/*TYPOGRAFI: här gjorde jag alla bokstäver lite mindre än som dom är på webbsidan så att de har storlek som man är van vid när det gäller texter på papper*/
+
+.what-i-do-highlight {
+	font-size: 0.8rem;
+
+}
+
+
+
+#column2 {
+	border-left: solid;
+	border-right: solid;
+}
+
+#circle-image-container1,
+#circle-image-container2,
+#circle-image-container3 {
+	grid-row: 2;
+	justify-self: center;
+
+}
+
+.circle1-image-position,
+.circle2-image-position,
+.circle3-image-position {
+	bottom: 0em;
+	border: none;
+	max-width: 7em;
+	right: 0em;
+	left: 0em;
+	top: 8em;
+	position: relative;
+
+}
+
+#white-line {
+	display: none;
+}
+
+.logo-container {
+	justify-self: left;
+
+
+}
+
+
+footer{
+	display: none;
+}
+
+#column1,
+#column2,
+#column3 {
+	bottom: 0em;
+	top: 10em;
+	padding: 4em 1em 1em 1em;
+	border: none;
+	grid-row: 2;
+	justify-self: center;
+	line-height: 1.2em;
+	}

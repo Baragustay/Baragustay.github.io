@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Barbora Gustafsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+	<title>Barbora Gustafsson</title>
+	<link rel="stylesheet" href="test.css">
+
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;600&family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+
+
+
+
+<body>
+		<div class="main-grid">
+		<!--jag använder grid layout för hela webplatsen, den fungerar som wrapper för sidans innehåll-->
+
+	<header>	<div class="logo-container"><a href="index.html" title="Home" class="logo-home-link">
+				<img src="images/logo.png" class="logo" alt="logo"> </a>
+			<!--sidans logga som fungar även som en home button-->
+		</div>
+		<div id="white-line"></div>
+
+		<nav id="main-navigation-container">
+			<!--websidans navigation wraps in en nav tag, den är lämpligare än endast div med tanke på skärmläsaren, samtidigt visar taggen att denna del hanldar om kopling mellan webplatsens huvuddelar-->
+
+			<ul class="nav-menu">
+
+				<li><a href="about.html" class="navigation  no-wrap">Om mig</a></li>
+
+				<li><a href="services.html" title="services" class="navigation">Mina tjänster </a></li>
+
+				<li><a href="Showcase.html" title="Showcase" class="showcase">Showcase</a></li>
+
+				<li><a href="kontakt.html" title="kontakt" class="navigation navigation-current">kontakt</a></li>
+
+			</ul>
+
+
+
+
+		</nav>
+		<div class="hero-text-container">
+			<p class="hero-text"> <span class="hero-sentences-background hero-text-row1">Din<span class="letter-pink"> personliga </span>mediabyrå</span>
+				<span class="hero-sentences-background hero-text-row2">Jag tar hand om responsiv webdesign<span class="hero-text-row2-SEO">, SEO,</span></span>
+				<span class="hero-sentences-background hero-text-row3">digital marknadsföring och sociala medier.</span>
+			</p>
+		</div>
+</header>
+
+
+		<div class="hero-image"> </div>
+
+
+
+		<div class="container-form">
+			<div class="container-line">
+				<h1>Vägra inte kontakta mig</h1>
+				<p>Vill du komma i kontakt med mig? fyll i formulär nedan eller ring. Jag svarar så snart jag kan. </p>
+			</div>
+
+			<form action="action_page.php">
+
+				<label for="fname">Namn och efternamn</label>
+				<input type="text" id="fname" name="firstname" placeholder="Ditt namn..">
+
+				<label for="phone">Telefonnummer</label>
+				<input type="text" id="phone" name="telephone" placeholder="Ditt telefonnummer..">
+
+				<label for="email">E-post</label>
+				<input type="text" id="email" name="e-mail" placeholder="Din e-post adress..">
+
+
+				<label for="subject">Ditt medelande</label>
+				<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+
+
+
+
+<footer>
+			<div class="infobox">
+			<div class="adress-box">
+				<h3>Adress:</h3>
+				<p class="infobox-text">Svankärssvägen 8P
+				<br>Uppsala 786 53</p>
+			</div>
+
+			<div class="telefon">
+				<h3>Telefon:</h3>
+				<p class="infobox-text">073 398 4440</p>
+
+			</div>
+
+			<div class="e-mail">
+				<h3>e-post</h3>
+				<p class="infobox-text">barbora.gustafsson@gmail.com</p>
+			</div>
+		</div>
+
+
+
+
+
+		
+			<div id="credits"><p>Barbora Gustafsson ®2022</p></div>
+		</footer><!--text markeras med "footer" för att visa till webbläsaren och skärmläsaren vad denna del av webbsidan handlar om.-->
+
+
+	</div>
+
+</body>
+
+</html>

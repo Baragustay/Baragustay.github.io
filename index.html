@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="sv">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Barbora Gustafsson">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+	<title>Barbora Gustafsson</title>
+	<link rel="stylesheet" href="test.css">
+	<link rel="stylesheet" type="text/css" href="test-print.css" media="print">
+
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;600&family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+
+
+
+
+</head>
+
+
+
+
+
+<body>
+
+	<div class="main-grid">
+		<!--jag använder grid layout för hela webplatsen, den fungerar som wrapper för sidans innehåll-->
+
+		<header>
+			<div class="logo-container"><a href="index.html" title="Home" class="logo-home-link">
+					<img src="images/logo.png" class="logo" alt="logo"> </a>
+				<!--sidans logga som fungar även som en home button-->
+			</div>
+
+			<div id="white-line"></div>
+
+			<nav id="main-navigation-container">
+				<!--websidans navigation wraps in en nav tag, den är lämpligare än endast div med tanke på skärmläsaren, samtidigt visar taggen att denna del hanldar om kopling mellan webplatsens huvuddelar-->
+
+				<ul class="nav-menu">
+
+					<li><a href="about.html" class="navigation">Om mig</a></li>
+
+					<li><a href="services.html" title="services" class="navigation">Mina tjänster </a></li>
+
+					<li><a href="Showcase.html" title="Showcase" class="showcase">Showcase</a></li>
+
+					<li><a href="kontakt.html" title="kontakt" class="navigation">kontakt</a></li>
+
+				</ul>
+
+
+
+
+			</nav>
+			<div class="hero-text-container">
+				<p class="hero-text"> <span class="hero-sentences-background hero-text-row1">Din<span class="letter-pink"> personliga </span>mediabyrå</span>
+					<span class="hero-sentences-background hero-text-row2">Jag tar hand om responsiv webdesign<span class="hero-text-row2-SEO">, SEO,</span></span>
+					<span class="hero-sentences-background hero-text-row3">digital marknadsföring och sociala medier.</span>
+				</p>
+			</div>
+		</header>
+
+
+		<div class="hero-image"> </div>
+
+
+
+		<div id="circle-image-container1">
+			<!--alla "circle container innebär plats på grid-->
+			<img src="images/brand.jpg" class="circle1-image-position" alt="cooperation">
+		</div>
+
+		<div id="column1">
+			<h1>Ditt varumärke,<br>
+				Din hemsida</h1>
+
+			<p class="column-intro">
+				Hej! filer som heter index.html, Showcase.html, services.html, kontakt.html och about.html är skriva och validerade som HTML5.
+			</p>
+
+			<p>Filen som heter indexxhtml1.0transitional är validerat som xhtml 1.0 transitional. Denna filen tar sin css från samma fil som alla andra men vissa delar fungerade inte (footer, header, nav) och därför skrev jag dem delar av css som behövdes ändra direkt inne i html filen.
+			</p>
+			<p>Det finns 1 css fil som gäller för alla sidor av webbplatsen. Det finns en ytterligare css fil som styr hur filen index.html ska se ut vid utskrift. </p>
+
+
+
+		</div>
+
+
+		<div id="circle-image-container2">
+			<img src="images/face.jpg" class="circle2-image-position" alt="face">
+		</div>
+
+		<div id="column2">
+			<h1>Söker du en pålitlig webbyrå?</h1>
+
+			<p class="column-intro">
+				Söker du en tillförlitlig samarbetspartner till ditt nästa webbprojekt? Då kan du sluta leta.
+			</p>
+			<p class="what-i-do-highlight">
+				logotyper<br>sökmotoroptimering (SEO)<br>digital marknadsföring<br>support<br>ökad närvaro på sociala medier</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+
+		</div>
+
+
+		<div id="circle-image-container3">
+			<img src="images/postit.jpg" alt="post-it" class="circle3-image-position">
+		</div>
+
+		<div id="column3">
+			<h1>Såhär går det till</h1>
+			<br>
+
+			<p class="column-intro">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			</p>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			</p>
+
+			<!---text i kolumnerna är markerad som div och p. Anledningen till det är att texten är endast kortfattad info om webbsidans innehål.-->
+
+		</div>
+
+		<footer>
+			<div class="infobox">
+				<div class="adress-box">
+					<h3>Adress:</h3>
+					<p class="infobox-text">Svankärssvägen 8P
+						<br>Uppsala 786 53
+					</p>
+				</div>
+
+				<div class="telefon">
+					<h3>Telefon:</h3>
+					<p class="infobox-text">073 398 4440</p>
+
+				</div>
+
+				<div class="e-mail">
+					<h3>e-post</h3>
+					<p class="infobox-text">barbora.gustafsson@gmail.com</p>
+				</div>
+			</div>
+
+
+
+
+
+
+			<div id="credits">
+				<p>Barbora Gustafsson ®2022</p>
+			</div>
+			<!--jag ger denna delen av footern sin egen ID för att kunna exkludera den när jag ska skriva ut sidan-->
+		</footer>
+		<!--text markeras med "footer" för att visa till webbläsaren och skärmläsaren vad denna del av webbsidan handlar om.-->
+
+
+
+
+
+	</div>
+
+
+
+
+</body>
+
+</html>
